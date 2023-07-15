@@ -1,4 +1,4 @@
-## Check the App: https://expo.dev/@dev_leena/accessride
+## Check the App: https://expo.dev/@dev_leena/accessride-driver
 ## Demo Video of App: https://www.youtube.com/watch?v=zn7UdE94buM
 
 # Get Started with Expo
