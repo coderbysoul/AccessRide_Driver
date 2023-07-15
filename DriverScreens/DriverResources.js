@@ -108,15 +108,11 @@ const DriverResources = () => {
           <View style={styles.section}>
             <Text style={styles.sectionHeading}>Tutorial Modules</Text>
             {tutorialModules.length > 0 ? (
-              <FlatList
-                data={tutorialModules}
-                renderItem={({ item }) => (
-                  <TouchableOpacity style={styles.resourceItem}>
+              tutorialModules.map((item)=>{return(
+                <TouchableOpacity style={styles.resourceItem} key={item.id}>
                     <Text style={styles.resourceTitle}>{item.title}</Text>
                   </TouchableOpacity>
-                )}
-                keyExtractor={(item) => item.id.toString()}
-              />
+              )})
             ) : (
               <Text style={styles.emptyText}>
                 No tutorial modules available.
@@ -127,19 +123,17 @@ const DriverResources = () => {
           <View style={styles.section}>
             <Text style={styles.sectionHeading}>Offline Training Sessions</Text>
             {offlineTrainingSessions.length > 0 ? (
-              <FlatList
-                data={offlineTrainingSessions}
-                renderItem={({ item }) => (
-                  <View style={styles.trainingSessionItem}>
+              offlineTrainingSessions.map((item)=>{
+                return(
+                  <View style={styles.trainingSessionItem} key={item.id}>
                     <Text style={styles.trainingSessionDate}>{item.date}</Text>
                     <Text style={styles.trainingSessionTime}>{item.time}</Text>
                     <Text style={styles.trainingSessionLocation}>
                       {item.location}
                     </Text>
                   </View>
-                )}
-                keyExtractor={(item) => item.id.toString()}
-              />
+                )
+              })
             ) : (
               <Text style={styles.emptyText}>
                 No offline training sessions available.
@@ -158,7 +152,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFFF",
-    paddingBottom: 75,
+    paddingBottom: 65,
   },
   lowerView: {
     backgroundColor: "white",

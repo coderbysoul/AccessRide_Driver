@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    paddingBottom : 75
+    paddingBottom : 65
   },
 
   upperView: {

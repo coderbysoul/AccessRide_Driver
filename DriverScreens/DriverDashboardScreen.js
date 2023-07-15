@@ -7,8 +7,9 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
 
-const DriverDashboardScreen = () => {
+const DriverDashboardScreen = ({navigation}) => {
   const [currentRide, setCurrentRide] = useState({
     id: 1,
     passengerName: "John Doe",
@@ -107,6 +108,9 @@ const DriverDashboardScreen = () => {
     <View style={styles.container}>
       <View style={styles.upperView}>
         <Text style={styles.title}>Driver Dashboard</Text>
+        <TouchableOpacity style={{position: 'absolute', right : 20}} onPress={()=>navigation.navigate("ChatScreen")}>
+        <Ionicons name="chatbubbles-sharp" size={35} color="#00ff00" />
+        </TouchableOpacity>
       </View>
 
       <View style={{ marginHorizontal: 20 }}>
